@@ -32,15 +32,16 @@ namespace Prover
         public override string ToString()
         {
             var maxWidth = 5 + Moves.Max(m => m.To.Length);
-
-            int i = 1;
-            var sb = new StringBuilder();
             
+            var sb = new StringBuilder();
+            sb.AppendLine("1. Show " + FinalMove.To);
+
+            int i = 2;
             foreach (var move in Moves)
             {
                 sb.AppendFormat("{0}. ", i);
                 sb.Append(move.To);
-                for (int j = 0; j < maxWidth - move.To.Length; j++)
+                for (int j = 0; j < maxWidth - move.To.Length - i.ToString().Length; j++)
                     sb.Append(" ");
                 
                 sb.AppendLine(move.RuleName);

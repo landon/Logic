@@ -8,12 +8,6 @@ namespace Prover
 {
     class Program
     {
-
-// xI → xIU
-// Mx → Mxx
-// xIIIy → xUy
-// xUUy → xy
-
         static void Main(string[] args)
         {
             var IIItoU = new ReplacementRule("IIItoU", "III", "U");
@@ -22,10 +16,12 @@ namespace Prover
             var Double = new DuplicationRule("Double", 1);
 
             var prover = new Prover("MI", IIItoU, UUto, EndItoIU, Double);
-
-            var derivation = prover.Prove("MUUII");
+            var derivation = prover.Prove("MIIIIIIIIIIU");
 
             var v = derivation.ToString();
+
+            Console.Write(v);
+            Console.ReadKey();
         }
     }
 }
