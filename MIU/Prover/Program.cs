@@ -16,7 +16,7 @@ namespace Prover
             var Double = new DuplicationRule("Double", 1);
 
             var prover = new Prover("MI", IIItoU, UUto, EndItoIU, Double);
-            var derivation = prover.Prove("MIIIIIIIIIIU");
+            var derivation = prover.Prove("MIUIUIUI");
 
             var v = derivation.ToString();
 
